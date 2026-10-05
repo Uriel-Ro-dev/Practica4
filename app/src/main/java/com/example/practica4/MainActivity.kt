@@ -35,12 +35,18 @@ class MainActivity : AppCompatActivity() {
         //var num2=cnum2.text.toString().toInt()
         //var res=num1+num2
         //cresult.text=res.toString()
+        val txt1 = cnum1.text.toString()
+        val txt2 = cnum2.text.toString()
+        if (txt1.isEmpty() || txt2.isEmpty()){
+            cresult.text = "Ingresa ambos numeros"
+            return
+        }
         var num1: Int
-        var num2: Int
-        var res: Int
+        var num2: Double
+        var res: Double //cambie de Int a Double
 
-        num1 = Integer.parseInt(cnum1.text.toString())
-        num2 = Integer.parseInt(cnum2.text.toString())
+        num1 = Integer.parseInt(txt1)
+        num2 = txt2.toDouble()  //cambie el Integer.parseInt(txt2)
         res = num1 + num2
         cresult.text = res.toString()
     }
