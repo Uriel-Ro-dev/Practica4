@@ -30,6 +30,10 @@ class MainActivity : AppCompatActivity() {
         cnum2=findViewById<EditText>(R.id.gnum2)
         cresult=findViewById<TextView>(R.id.gresul)
     }
+    public fun valida (){
+
+    }
+
     public fun aceptar(vista:View){
         //var num1=cnum1.text.toString().toInt()
         //var num2=cnum2.text.toString().toInt()
@@ -47,8 +51,15 @@ class MainActivity : AppCompatActivity() {
 
         num1 = Integer.parseInt(txt1)
         num2 = txt2.toDouble()  //cambie el Integer.parseInt(txt2)
+        when (num1){
+            !in 1..50 ->  {cresult.text = "El numero debe estar entre 1 y 50"
+                return}
+        }
+        when (num2){
+            !in 7.5..12.3 -> {cresult.text = "El numero debe estar entre 7.5 y 12.3"
+                return}
+        }
         res = num1 + num2
         cresult.text = res.toString()
     }
-
 }
